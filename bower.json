@@ -1,0 +1,21 @@
+{
+  "name": "lazer_sun",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Your Name <you@example.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/LastObserver/lazer_sun",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  }
+}
