@@ -10,13 +10,16 @@ var watch = require('gulp-watch')
 
 var path = {
 	src: {
-		pug: './src/*.pug'
+		pug: './src/html/*.pug'
+		scss: './src/css/*.scss'
 	},
 	build: {
 		html: './build/html/'
+		css: './build/css/'
 	},
 	watch: {
-		pug: './src/*.pug'
+		pug: './src/html/*.pug'
+		scss: './src/css/*.scss'
 	}
 };
 
@@ -33,6 +36,13 @@ gulp.task('html',function(){
 		.on('end',browserSync.reload)
 });
 
+gulp.task('css',function(){
+	gulp.src(path.src.scss)
+		.pipe(scss({pretty: true}))
+		.pipe(gulp.dest(path.build.css))
+		.on('end',browserSync.reload)
+})
+
 gulp.task('webserver',function(){
 	browserSync({
 		server: {
@@ -44,6 +54,9 @@ gulp.task('webserver',function(){
 gulp.task('watch',function(){
 	watch([path.watch.pug], function(event,cb){
 		gulp.start('html');
+	});
+	watch([path.watch.scss],function(event.cb){
+		gulp.start('css');
 	});
 });
 
