@@ -74,4 +74,8 @@ gulp.task('watch',function(){
 	});
 });
 
-gulp.task('default',['html','css','js','watch','webserver'])
+gulp.task('dev',function(){
+	gulp.start('html','css','js')
+})
+
+gulp.task('default',['dev','watch','webserver'])
