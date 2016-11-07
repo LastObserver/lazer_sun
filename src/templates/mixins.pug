@@ -1,8 +1,11 @@
+mixin news-preview()
+	article
+		h2: a(href="#") Театр-студия "Быть" взял гран-при
+		p Ай молодцы!
 
-
-mixin news(a)
-	.news&attributes(attributes)
-		if a.news
-			each newsp in a.news
-				h4!= newsp.name
-				p!= newsp.text
+mixin article(a)
+	.article&attributes(attributes)
+		if a.article
+			each atext in a.article
+				h1.article__headline!= atext.headline
+				p.article__intro!= atext.intro

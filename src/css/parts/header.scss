@@ -1,0 +1,15 @@
+.header {
+	height: 200px;
+	background-color: $base-color;
+	margin: 10px;
+	border: solid 4px;
+	padding: 0;
+	box-sizing: content-box;
+	&__logo {
+		float: left;
+		margin-left: 30px;
+		& img{
+			height: 200px;
+		}
+	}
+}
