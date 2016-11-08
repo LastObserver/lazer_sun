@@ -1,11 +1,28 @@
 mixin news-preview()
-	article
-		h2: a(href="#") Театр-студия "Быть" взял гран-при
-		p Ай молодцы!
+	article.newspreview
+		h3: a.newspreview__headline(href="#") Театр-студия "Быть" взял гран-при
+		p.newspreview__text Ай какие молодцы!
 
 mixin article(a)
 	.article&attributes(attributes)
 		if a.article
 			each atext in a.article
-				h1.article__headline!= atext.headline
+				h2.article__headline!= atext.headline
 				p.article__intro!= atext.intro
+
+mixin page-selector(a)
+	if a.input
+		each inVar in a.input
+			if (inVar.pagenum == inVar.current) & (inVar.pagenum)
+				span!= inVar.pagenum + " "
+			else
+				a(href="#")!= inVar.pagenum + " "
+
+mixin catalog-block(a)
+	if a.input
+		each el in a.input
+			div.col-md-2.product.col-md-offset-1
+				img.product__image(src=el.image)
+				h3.product__name!= el.name
+				p.product__description!= el.desc
+				span.product__price!= 'Цена: ' + el.price

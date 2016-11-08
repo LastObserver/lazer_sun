@@ -14,14 +14,8 @@ html{
 }
 
 .menu {
-	float: right;
 	padding: 0;
-	margin-top: 50px;
-	margin-right: 50px;
-	overflow: hidden;
 	border: solid 4px #000;
-	height: 70px;
-	width: 40%;
 	display: inline-block;
 	box-sizing: content-box;
 	background-color: #ef7101;
@@ -32,14 +26,12 @@ html{
 		width: 33.33%;
 		& a {
 			display: block;
-			text-align: center;
 			height: 100%;
 			width: 100%;
-			line-height: 70px;
 			vertical-align: middle;
+			text-align: center;
 			color: #000;
 			font-weight: 400;
-			font-size: 30px;
 			font-family: 'Lobster', cursive;
 			text-decoration: none;
 			&:hover{
@@ -49,15 +41,18 @@ html{
 	}
 }
 
-.content {
-	margin: 10px;
+.containerblock {
+	margin: 0;
 	padding: 10px;
 }
 
-.article {
+.content {
 	margin: 10px;
 	border: solid 4px;
 	padding: 2%;
+}
+
+.article {
 	&__headline {
 		font-family: 'Lobster', cursive;
 	}
@@ -66,4 +61,82 @@ html{
 		font-family: 'Roboto Slab', serif;
 		font-size: 16px;
 	}
+}
+
+.newspreview {
+	display: block;
+	border: solid 4px #000;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 65%;
+	font-family: 'Roboto Slab', serif;
+	&__headline {
+		color: #610e04;
+		text-decoration: underline;
+	}
+	&__text {
+		font-size: 16px;
+	}
+}
+
+.announcement {
+	font-family: 'Lobster', cursive;
+}
+
+.selector{
+	border-bottom: solid 4px #000;
+	display: inline-block;
+	font-size: 20px;
+	// float: none;
+	// width: 100%;
+	// margin: 0 auto;
+	font-family: 'Lobster', cursive;
+	& a {
+		text-decoration: none;
+		color: #610e04;
+	}
+	& span {
+		color: #a14135;
+	}
+}
+
+.container {
+	width: auto;
+}
+
+.product {
+	// border: solid 4px #000;
+	// width: 250px;
+	// margin: 10px;
+	// padding: 10px;
+	box-sizing: content-box;
+	// width: 33.3333%;
+	&__image{
+		width: 100%;
+		background-color: #ef7101;
+	}
+	&__name{
+		font-family: 'Lobster', cursive;
+		color: #610e04;
+	}
+	&__description {
+		font-family: 'Roboto Slab', serif;
+		font-size: 16px;
+	}
+	&__price {
+		font-family: 'Roboto Slab', serif;
+		font-size: 20px;
+		color: #610e04;
+		text-decoration: underline;
+		font-weight: 600;
+	}
+}
+
+.col-center-block {
+    float: none;
+    display: block;
+    margin: 0 auto;
+    /* margin-left: auto; margin-right: auto; */
 }

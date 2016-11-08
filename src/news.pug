@@ -1,8 +1,29 @@
 extends templates/layout
 block wrapper
-	h1 Новости
+	div.content.container
+		+article({
+			article: [
+				{
+					headline: 'Новости',
+					intro: 'В последнее время в нашем городе происходит много чего интересного. Но кому это интересно, когда можно рассказать аж пять(!) раз про одну и ту же новость? Вот именно! Наслаждайтесь. <br> Да, там внизу будет щелкалка страниц... Так вот, она <b> не работает</b>. Даже не пытайтесь что-то там нажать. Нет, мы это не починим.'
+				}
+			]
+		})
 
-	- i=0;
-	//- while i<5
-	//- 	+news-preview()
-	//- 	- i++;	
+		- i=0;
+		while i<5
+			+news-preview()
+			- i++;
+		div.row
+			div.selector.text-center.col-md-2.col-center-block
+				- i=1;
+				while i<10
+					+page-selector({
+						input: [
+							{
+								pagenum: i,
+								current: 1
+							}
+						]
+					})
+					- i++;
