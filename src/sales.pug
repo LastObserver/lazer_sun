@@ -24,7 +24,7 @@ block wrapper
 				input: [
 					{
 						image: 'images/ax.png',
-						name: 'Ржавая секира несправедливости',
+						name: 'Ржавая тупая  хрупкая секира несправедливости',
 						desc: 'Только что выкованная секира кузнеца, годами учившего все тонкости ремесла, в надежде стать уважаемым кузнецом. <br> ',
 						price: '3.000 золотых'
 					}
@@ -40,19 +40,16 @@ block wrapper
 					}
 				]
 			})
-		div.selector.text-center.col-md-2.col-center-block
-			- i=1;
-			while i<10
-				+page-selector({
-					input: [
-						{
-							pagenum: i,
-							current: 1
-						}
-					]
-				})
-				- i++;
-		//- - i=0;
-		//- while i<5
-		//- 	+news-preview()
-		//- 	- i++;	
+		div.row
+			div.selector.text-center.col-md-2.col-center-block
+				- i=1;
+				while i<10
+					+page-selector({
+						input: [
+							{
+								pagenum: i,
+								current: 1
+							}
+						]
+					})
+					- i++;

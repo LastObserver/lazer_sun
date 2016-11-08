@@ -89,16 +89,13 @@ html{
 	border-bottom: solid 4px #000;
 	display: inline-block;
 	font-size: 20px;
-	// float: none;
-	// width: 100%;
-	// margin: 0 auto;
 	font-family: 'Lobster', cursive;
 	& a {
-		text-decoration: none;
+		text-decoration: underline;
 		color: #610e04;
 	}
 	& span {
-		color: #a14135;
+		color: $base-color;
 	}
 }
 
@@ -107,15 +104,11 @@ html{
 }
 
 .product {
-	// border: solid 4px #000;
-	// width: 250px;
-	// margin: 10px;
-	// padding: 10px;
 	box-sizing: content-box;
-	// width: 33.3333%;
 	&__image{
 		width: 100%;
 		background-color: #ef7101;
+		border: solid 8px #000;
 	}
 	&__name{
 		font-family: 'Lobster', cursive;
@@ -137,6 +130,5 @@ html{
 .col-center-block {
     float: none;
     display: block;
-    margin: 0 auto;
-    /* margin-left: auto; margin-right: auto; */
+    margin: 30px auto;
 }

@@ -16,7 +16,9 @@ mixin page-selector(a)
 			if (inVar.pagenum == inVar.current) & (inVar.pagenum)
 				span!= inVar.pagenum + " "
 			else
-				a(href="#")!= inVar.pagenum + " "
+				a(href="#")!= inVar.pagenum
+				span 
+
 
 mixin catalog-block(a)
 	if a.input
