@@ -1,0 +1,26 @@
+extends templates/layout
+block wrapper
+	.container
+		h1 Портфолио
+		.row
+			- i = 0
+			while i<4
+				.col-lg-6
+					.portfolio-item
+						.row
+							.col-lg-6
+								.portfolio-item__primary
+									.portfolio-item__prev-img
+										img(src="images/prev-big.png",alt="")
+									.portfolio-item__title Семейные книги
+							.col-lg-6
+								.portfolio-item__secondary
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+				- i++

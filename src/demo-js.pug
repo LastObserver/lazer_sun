@@ -1,0 +1,54 @@
+extends templates/layout
+block wrapper
+	button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+		| Launch demo modal
+
+	// Modal
+	#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+		.modal-dialog(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h4#myModalLabel.modal-title Modal title
+				.modal-body
+					//- .awesome-slider
+					//- 	- i = 1
+					//- 	while i<10
+					//- 		.awesome-slider__item
+					//- 			img.awesome-slider__img(src="https://randomuser.me/api/portraits/women/"+i*2+".jpg")
+					//- 		- i++
+				.modal-footer
+					button.btn.btn-default(type='button', data-dismiss='modal') Close
+					button.btn.btn-primary(type='button') Save changes
+	//- .slider-container
+	.awesome-slider
+		- i = 1
+		while i<10
+			.awesome-slider__item
+				img.awesome-slider__img(src="https://randomuser.me/api/portraits/women/"+i*2+".jpg")
+			- i++
+	.container
+		h1 Портфолио
+		.row
+			- i = 0
+			while i<4
+				.col-lg-6
+					.portfolio-item
+						.row
+							.col-lg-6
+								.portfolio-item__primary
+									.portfolio-item__prev-img
+										img(src="images/prev-big.png",alt="")
+									.portfolio-item__title Семейные книги
+							.col-lg-6
+								.portfolio-item__secondary
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+									.portfolio-item__prev-small
+										img(src="images/prev-small.png",alt="")
+				- i++

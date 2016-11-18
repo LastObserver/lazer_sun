@@ -2,52 +2,74 @@
 <html lang="en">
   <head> 
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Document</title>
     <link rel="stylesheet" href="../css/main.css" type="text/css"/>
+    <script src="https://use.fontawesome.com/8147d47b79.js"></script>
   </head>
   <body>
-    <div class="containerblock">
-      <div class="header">
-        <div class="header__logo"><a href="../index.html"><img src="images/logo.png"/></a></div>
-        <ul class="menu">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="sales.html">Каталог</a></li>
-        </ul>
-      </div>
-      <div class="container-fluid content">
-              <div class="article">
-                <h2 class="article__headline">Каталог</h2>
-                <p class="article__intro">А здесь вы можете посмотреть на то, что мы вам можем продать. Или не можем. Да и не важно это, ведь все мы лишь маленькие частицы, состоящие из пустоты, бесцельно летящие в никуда в бесконечно расширяющейся вселенной. <br> И да, если что, щелкалку страниц никто так и не починил. </p>
+    <div class="header">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display-->
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#"> <img class="navbar-brand__logo" src="../images/logo.png"/></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling-->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" type="text" placeholder="Search for..."/><span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button></span>
+                </div>
               </div>
-        <div class="row">
-                <div class="col-md-2 product col-md-offset-1"><img class="product__image" src="images/sword.png"/>
-                  <h3 class="product__name">Заколдованный проклятый меч разочарования</h3>
-                  <p class="product__description">Меч, добытый из простенькой пещерки под городом, охранявшейся забытым всеми гоблином-алкоголиком. <br> </p><span class="product__price">Цена: 1.000 золотых</span>
-                </div>
-                <div class="col-md-2 product col-md-offset-1"><img class="product__image" src="images/ax.png"/>
-                  <h3 class="product__name">Ржавая тупая  хрупкая секира несправедливости</h3>
-                  <p class="product__description">Только что выкованная секира кузнеца, годами учившего все тонкости ремесла, в надежде стать уважаемым кузнецом. <br> </p><span class="product__price">Цена: 3.000 золотых</span>
-                </div>
-                <div class="col-md-2 product col-md-offset-1"><img class="product__image" src="images/scythe.png"/>
-                  <h3 class="product__name">Обычная коса</h3>
-                  <p class="product__description">Просто обычная коса. У нее даже нет истории. Да, этот парень, делающий описания совсем обленился. Впрочем, какая разница, мы ему даже не платим. <br> </p><span class="product__price">Цена: 10.000 золотых</span>
-                </div>
-        </div>
-        <div class="row">
-          <div class="selector text-center col-md-2 col-center-block"><span>1 </span><a href="#">2</a><span> </span><a href="#">3</a><span> </span><a href="#">4</a><span> </span><a href="#">5</a><span> </span><a href="#">6</a><span> </span><a href="#">7</a><span> </span><a href="#">8</a><span> </span><a href="#">9</a><span> </span>
+            </form>
+            <ul class="nav navbar-nav">
+              <li><a href="#">MOVIES</a></li>
+              <li><a href="#">TV SHOWS</a></li>
+              <li><a href="#">MUSIC</a></li>
+              <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FEATURES <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider" role="separator"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li class="divider" role="separator"></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p class="navbar-text navbar-right"><a class="navbar-link" href="#">Login</a> or <a class="navbar-link" href="#">register</a></p>
           </div>
         </div>
-      </div>
-      <footer class="footer"> 
-        <div class="footer__logo"><a href="../index.html"><img src="images/logo.png"/></a></div>
-        <ul class="menu">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="news.html">Новости</a></li>
-          <li><a href="sales.html">Каталог</a></li>
-        </ul>
-        <div class="footer__info">All credits to LastObserver</div>
-      </footer>
+      </nav>
     </div>
+    <div class="container-fluid content">
+          <div class="article">
+            <h2 class="article__headline">Каталог</h2>
+            <p class="article__intro">А здесь вы можете посмотреть на то, что мы вам можем продать. Или не можем. Да и не важно это, ведь все мы лишь маленькие частицы, состоящие из пустоты, бесцельно летящие в никуда в бесконечно расширяющейся вселенной. <br> И да, если что, щелкалку страниц никто так и не починил. </p>
+          </div>
+      <div class="row">
+            <div class="col-md-2 product col-md-offset-1"><img class="product__image" src="images/sword.png"/>
+              <h3 class="product__name">Заколдованный проклятый меч разочарования</h3>
+              <p class="product__description">Меч, добытый из простенькой пещерки под городом, охранявшейся забытым всеми гоблином-алкоголиком. <br> </p><span class="product__price">Цена: 1.000 золотых</span>
+            </div>
+            <div class="col-md-2 product col-md-offset-1"><img class="product__image" src="images/ax.png"/>
+              <h3 class="product__name">Ржавая тупая  хрупкая секира несправедливости</h3>
+              <p class="product__description">Только что выкованная секира кузнеца, годами учившего все тонкости ремесла, в надежде стать уважаемым кузнецом. <br> </p><span class="product__price">Цена: 3.000 золотых</span>
+            </div>
+            <div class="col-md-2 product col-md-offset-1"><img class="product__image" src="images/scythe.png"/>
+              <h3 class="product__name">Обычная коса</h3>
+              <p class="product__description">Просто обычная коса. У нее даже нет истории. Да, этот парень, делающий описания совсем обленился. Впрочем, какая разница, мы ему даже не платим. <br> </p><span class="product__price">Цена: 10.000 золотых</span>
+            </div>
+      </div>
+      <div class="row">
+        <div class="selector text-center col-md-2 col-center-block"><span>1 </span><a href="#">2</a><span> </span><a href="#">3</a><span> </span><a href="#">4</a><span> </span><a href="#">5</a><span> </span><a href="#">6</a><span> </span><a href="#">7</a><span> </span><a href="#">8</a><span> </span><a href="#">9</a><span> </span>
+        </div>
+      </div>
+    </div>
+    <script src="../js/main.js"></script>
   </body>
 </html>

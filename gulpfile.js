@@ -13,6 +13,7 @@ var newer = require('gulp-newer');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var rimraf = require('rimraf');
+var rigger = require('gulp-rigger');
 
 var path = {
 	src: {
@@ -29,8 +30,8 @@ var path = {
 	},
 	watch: {
 		pug: './src/**/*.pug',
-		scss: './src/css/*.scss',
-		js: './src/js/*.js',
+		scss: './src/css/**/*.scss',
+		js: './src/js/**/*.js',
 		images: './src/images/**/*.*'
 	},
 	clean: './build'
@@ -74,6 +75,7 @@ gulp.task('css:dev',function(){
 gulp.task('js:build',function(){
 	gulp.src(path.src.js)
 		.pipe(plumber())
+		.pipe(rigger())
 		.pipe(gulp.dest(path.build.js))
 		.pipe(uglify())
 });
@@ -81,6 +83,7 @@ gulp.task('js:build',function(){
 gulp.task('js:dev',function(){
 	gulp.src(path.src.js)
 		.pipe(plumber())
+		.pipe(rigger())
 		.pipe(gulp.dest(path.build.js))
 		.on('end',browserSync.reload)
 });

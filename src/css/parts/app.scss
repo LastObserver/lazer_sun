@@ -1,0 +1,170 @@
+$orange: #f2b183;
+$dark-orange: darken($orange,10);
+
+.navbar-brand {
+	display: block;
+	padding: 0;
+	margin: 0;
+	box-sizing:content-box;
+	&__logo{
+		margin: 2% 0;
+		height: 80%;
+	}
+}
+
+.loginform{
+	display: inline-block;
+	box-sizing: content-box;
+	padding: 14px;
+}
+
+.custom-alert {
+	outline: solid 2px rgb(188,232,241);
+	width: 98%;
+	margin: 0 auto;
+	margin-top: -30px;
+	box-sizing: content-box;
+	background-image: linear-gradient(to bottom, white, #f8fcfe);
+}
+
+.custom-alert .alert h4.custom-alert__headline {
+	color:#1596c7;
+	font-weight: 400;
+}
+
+.sortbar {
+	padding: 0 10px;
+	background-color: white;
+	background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+	background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+	background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+	background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+	-webkit-background-size: 3px 3px;
+	-moz-background-size: 3px 3px;
+	background-size: 3px 3px;
+}
+
+.content {
+	margin-top: 50px;
+}
+
+.comms-block {
+	border: dashed 1px #ddd;
+	&__headline {
+		font-weight: 600;
+		float: left;
+	}
+	&__time {
+		float: right;
+	}
+	&__text {
+		clear: both;
+		display: block;
+	}
+}
+
+.page-block {
+	margin: 0 auto;
+	float: none;
+	display: block;
+}
+
+
+
+// Для обучалки по селекторам
+// .element {
+// 	color: red;
+// }
+
+// // div {
+// // 	color: gray;
+// // }
+
+// [href$=".pdf"] {
+// 	color: blue;
+// }
+
+// .child:first-letter {
+// 	color: red;
+// 	font-size: 20px;
+// }
+
+// .child:first-child {
+// 	font-size: 12px;
+// }
+
+// .parent > div {
+// 	padding: 10px;
+// }
+
+// .parent .child + div {
+// 	display: inline-block;
+// }
+
+// .parent ~ div {
+// 	padding: 50px;
+// }
+
+// Урок адаптива
+// .element {
+// 	background: #eac;
+// 	margin: 20px;
+// 	padding: 40px;
+// 	@media (max-width: 1000px) {
+// 		max-width: 700px;
+// 	}
+// 	@media (min-width: $small-w) and (max-width: $medium-w) {
+// 			max-width: 100px;
+// 		}
+// }
+
+// домашка про джиквери
+// .responsive-image {
+// 	display: block;
+// 	margin: 0 auto;
+// 	@media (max-width: 480px ) {
+// 		width: 50px;
+// 	}
+// 	@media (min-width: 480px) and (max-width: 768px ) {
+// 		width: 70px;
+// 	}
+// 	@media (min-width: 768px) {
+// 		width: 100px;
+// 	}
+// }
+
+.element {
+	background-color: #eac;
+	display: block;
+	font-size: 50px;
+	user-select: none;
+	cursor: pointer;
+}
+
+.up {
+	background-color: $orange;
+	position: fixed;
+	bottom: 20px;
+	right: -50px;
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+	color: #534255;
+	text-transform: uppercase;
+	font-size: 30px;
+	border: solid 4px #a15e61;
+	box-sizing: border-box;
+	text-align: center;
+	transition: all .5s ease-in-out;
+	// display: none;
+	// &.active {
+	// 	display: block;
+	// }
+	&:focus {
+		outline: none;
+	}
+	&:hover{
+		background-color: $dark-orange;
+		color: #f5ebe0;
+	}
+}

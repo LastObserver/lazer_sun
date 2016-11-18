@@ -2,12 +2,14 @@
 html(lang="en")
 	head 
 		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
 		title Document
 		link(rel="stylesheet" href="../css/main.css"  type="text/css" )
+		script(src='https://use.fontawesome.com/8147d47b79.js')
 		block page-scripts
 	body
-		div.containerblock
-			include mixins
-			include header
-			block wrapper
-			include footer
+		include mixins
+		include header
+		block wrapper
+		//- include footer
+		script(src='../js/main.js')

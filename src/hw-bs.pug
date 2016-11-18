@@ -1,0 +1,120 @@
+extends templates/layout
+block wrapper
+	.custom-alert
+		.alert(role='alert')
+			button.close(type='button', data-dismiss='alert', aria-label='Close')
+				span(aria-hidden='true') ×
+			h4.custom-alert__headline Your one stop destination for all things you watch
+			p.custom-alert__text Change this and that and try again.
+			p
+				button.btn.btn-info(type='button') 
+					i.fa.fa-thumbs-up(aria-hidden='true')   
+					|  Join us
+				button.btn.btn-danger(type='button') 
+					i.fa.fa-thumbs-down(aria-hidden='true')   
+					|  OR DIE
+	.content
+		.container
+			.row
+				.col-lg-9
+					.catalog
+						.row
+							.col-lg-12
+									nav.navbar.navbar-default.sortbar
+										.container-fluid
+											button.btn.btn-default.navbar-btn(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+												| Sort By 
+												span.caret
+											ul.dropdown-menu
+												li
+													a(href='#') Price up
+												li
+													a(href='#') Price down
+												li
+													a(href='#') Date
+												li
+													a(href='#') Relevance
+											p.navbar-text.navbar-right
+												b 12,563 
+												| Titles Found
+						-i=0
+						while i<3
+							.row
+								-j=0
+								while j<4
+									.col-sm-6.col-md-3
+										.thumbnail
+											img(src='http://placehold.it/300x400', alt='picture...thing')
+											.caption
+												h3 Thumbnail label
+												p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. 
+									-j++
+							-i++
+					.row
+						nav.page-block.col-xs-8.col-md-4.center-block(aria-label='Page navigation')
+							ul.pagination
+								li
+									a(href='#', aria-label='Previous')
+										span(aria-hidden='true') «
+								li
+									a(href='#') 1
+								li
+									a(href='#') 2
+								li
+									a(href='#') 3
+								li
+									a(href='#') 4
+								li
+									a(href='#') 5
+								li
+									a(href='#', aria-label='Next')
+										span(aria-hidden='true') »
+				.col-lg-3
+					.sidebar
+						.filter-by
+							.list-group
+								span.list-group-item(href='#') FILTER BY
+
+								a.list-group-item(href='#')
+									i.fa.fa-clock-o(aria-hidden='true')
+									|   Recently added
+								a.list-group-item(href='#') 
+									i.fa.fa-heart-o(aria-hidden='true')
+									|   Most Popular
+								a.list-group-item(href='#')
+									i.fa.fa-star-o(aria-hidden='true')
+									|   Highest Rating
+						.login-form
+							.panel.panel-info
+									.panel-heading
+										h3.panel-title 
+											i.fa.fa-lock(aria-hidden='true')
+											|  Quick Login
+									.panel-body
+										form
+											.form-group
+												label(for='exampleInputEmail1') Username
+												input#exampleInputEmail1.form-control(type='text')
+											.form-group
+												label(for='exampleInputPassword1') Password
+												input#exampleInputPassword1.form-control(type='password')
+											.checkbox
+												label
+													input(type='checkbox')
+													|  Oh, you'd better remember me, son of a bitch!
+											button.btn.btn-default(type='submit') Login
+						.latest-comms
+							.panel.panel-info
+								.panel-heading
+										h3.panel-title 
+											i.fa.fa-comments(aria-hidden='true')
+											|  Latest Comments
+								ul.list-group
+									- i=0
+									while i<6
+										li.list-group-item.comms-block
+											span.comms-block__headline Comment title
+											span.comms-block__time 4:34
+											p.comms-block__text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+										-i++
+					
