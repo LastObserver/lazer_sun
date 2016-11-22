@@ -69,70 +69,6 @@ $dark-orange: darken($orange,10);
 	display: block;
 }
 
-
-
-// Для обучалки по селекторам
-// .element {
-// 	color: red;
-// }
-
-// // div {
-// // 	color: gray;
-// // }
-
-// [href$=".pdf"] {
-// 	color: blue;
-// }
-
-// .child:first-letter {
-// 	color: red;
-// 	font-size: 20px;
-// }
-
-// .child:first-child {
-// 	font-size: 12px;
-// }
-
-// .parent > div {
-// 	padding: 10px;
-// }
-
-// .parent .child + div {
-// 	display: inline-block;
-// }
-
-// .parent ~ div {
-// 	padding: 50px;
-// }
-
-// Урок адаптива
-// .element {
-// 	background: #eac;
-// 	margin: 20px;
-// 	padding: 40px;
-// 	@media (max-width: 1000px) {
-// 		max-width: 700px;
-// 	}
-// 	@media (min-width: $small-w) and (max-width: $medium-w) {
-// 			max-width: 100px;
-// 		}
-// }
-
-// домашка про джиквери
-// .responsive-image {
-// 	display: block;
-// 	margin: 0 auto;
-// 	@media (max-width: 480px ) {
-// 		width: 50px;
-// 	}
-// 	@media (min-width: 480px) and (max-width: 768px ) {
-// 		width: 70px;
-// 	}
-// 	@media (min-width: 768px) {
-// 		width: 100px;
-// 	}
-// }
-
 .element {
 	background-color: #eac;
 	display: block;
@@ -166,5 +102,94 @@ $dark-orange: darken($orange,10);
 	&:hover{
 		background-color: $dark-orange;
 		color: #f5ebe0;
+	}
+}
+
+/*ДОМАШКА ЗАПИЛИТЬ ФОРМУ С ДЖКВЕРИ*/
+.regFormContainer {
+	padding: 30px;
+	width: 300px;
+	margin: 0 auto;
+	background-color: #fe583f;
+	box-shadow: 0 0 0px black;
+	outline: none;
+	border: solid 10px #b1a701;
+	border-radius: 20px;
+}
+
+.register {
+	&__label {
+		font-size: 14px;
+		color: #420200;
+		margin-top: 10px;
+	}
+	&__text {
+		// margin-bottom: 10px;
+		// outline: none;
+		padding: 6px;
+		font-weight: 600;
+		border: 1px solid #cccccc;
+		&:focus {
+			outline: 4px solid #b1a701;
+		}
+	}
+	&__sbscr {
+		&:not(checked) {
+			position: absolute;
+			opacity: 0;
+		}
+		&:not(checked) + label {
+		  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+		  padding: 0 0 0 40px; /* оставляем слева от label место под псевдочекбокс */
+		}
+		/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+		&:not(checked) + label:before {
+			content: '';
+			position: absolute;
+			top: 2px;
+			left: 0;
+			width: 30px;
+			height: 16px;
+			// border-radius: 10px;
+			background: #fed3a2;
+			box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+		}
+		/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+		&:not(checked) + label:after {
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: 2px;
+			width: 12px;
+			height: 12px;
+			// border-radius: 10px;
+			background: #420200;
+			box-shadow: 0 2px 5px rgba(0,0,0,.3);
+			transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+		}
+		/* Меняем фон чекбокса, когда он включен. */
+		&:checked + label:before {
+			background: #e70001;
+		}
+		/* Сдвигаем переключатель чекбокса, когда он включен. */
+		&:checked + label:after {
+			left: 16px;
+		}
+		/* Показываем получение фокуса. */
+		&:focus + label:before {
+			box-shadow: 0 0 0 3px #b1a701;
+		}
+	}
+	&__send {
+		background-color: #b1a701;
+		color: white;
+		outline: none;
+		border: none;
+		padding: 5px 10px;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin: 10px auto;
+		margin-bottom: 0px;
+		display: block;
 	}
 }

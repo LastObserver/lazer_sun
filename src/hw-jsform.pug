@@ -1,0 +1,21 @@
+extends templates/layout
+block wrapper
+	.regFormContainer
+		form(action="#" method="post").register
+			label.register__label(for="nick") Никнейм:
+			br
+			input.register__text#nick(type="text" name="nick")
+			br
+			label.register__label(for="mail") E-mail:
+			br
+			input.register__text#mail(type="text" name="email")
+			br
+			label.register__label(for="psw") Пароль:
+			br
+			input.register__text#psw(type="password" name="password")
+			br
+			input.register__sbscr#sbscr(type="checkbox" name="subscribe")
+			label.register__label(for="sbscr")   Согласен получать новости
+			br
+			input.register__send(type="submit" value="Отправить")
+			

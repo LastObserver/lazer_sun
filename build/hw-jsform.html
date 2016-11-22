@@ -46,11 +46,18 @@
         </div>
       </nav>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">Колонка</div>
-        <div class="col-md-6">Другая</div>
-      </div>
+    <div class="regFormContainer">
+      <form class="register" action="#" method="post">
+        <label class="register__label" for="nick">Никнейм:</label><br/>
+        <input class="register__text" id="nick" type="text" name="nick"/><br/>
+        <label class="register__label" for="mail">E-mail:</label><br/>
+        <input class="register__text" id="mail" type="text" name="email"/><br/>
+        <label class="register__label" for="psw">Пароль:</label><br/>
+        <input class="register__text" id="psw" type="password" name="password"/><br/>
+        <input class="register__sbscr" id="sbscr" type="checkbox" name="subscribe"/>
+        <label class="register__label" for="sbscr">  Согласен получать новости</label><br/>
+        <input class="register__send" type="submit" value="Отправить"/>
+      </form>
     </div>
     <script src="../js/main.js"></script>
   </body>
