@@ -77,6 +77,14 @@ $dark-orange: darken($orange,10);
 	cursor: pointer;
 }
 
+.thumbnail {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	&.active {
+		opacity: 1;
+	}
+}
+
 .up {
 	background-color: $orange;
 	position: fixed;
@@ -106,90 +114,140 @@ $dark-orange: darken($orange,10);
 }
 
 /*ДОМАШКА ЗАПИЛИТЬ ФОРМУ С ДЖКВЕРИ*/
-.regFormContainer {
-	padding: 30px;
-	width: 300px;
+// .regFormContainer {
+// 	padding: 30px;
+// 	width: 300px;
+// 	margin: 0 auto;
+// 	background-color: #fe583f;
+// 	box-shadow: 0 0 0px black;
+// 	outline: none;
+// 	border: solid 10px #b1a701;
+// 	border-radius: 20px;
+// }
+
+// .register {
+// 	&__label {
+// 		font-size: 14px;
+// 		color: #420200;
+// 		margin-top: 10px;
+// 	}
+// 	&__text {
+// 		// margin-bottom: 10px;
+// 		// outline: none;
+// 		padding: 6px;
+// 		font-weight: 600;
+// 		border: 1px solid #cccccc;
+// 		&:focus {
+// 			outline: 4px solid #b1a701;
+// 		}
+// 	}
+// 	&__sbscr {
+// 		&:not(checked) {
+// 			position: absolute;
+// 			opacity: 0;
+// 		}
+// 		&:not(checked) + label {
+// 		  position: relative; /* будем позиционировать псевдочекбокс относительно label */
+// 		  padding: 0 0 0 40px; /* оставляем слева от label место под псевдочекбокс */
+// 		}
+// 		/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+// 		&:not(checked) + label:before {
+// 			content: '';
+// 			position: absolute;
+// 			top: 2px;
+// 			left: 0;
+// 			width: 30px;
+// 			height: 16px;
+// 			// border-radius: 10px;
+// 			background: #fed3a2;
+// 			box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
+// 		}
+// 		/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+// 		&:not(checked) + label:after {
+// 			content: '';
+// 			position: absolute;
+// 			top: 4px;
+// 			left: 2px;
+// 			width: 12px;
+// 			height: 12px;
+// 			// border-radius: 10px;
+// 			background: #420200;
+// 			box-shadow: 0 2px 5px rgba(0,0,0,.3);
+// 			transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
+// 		}
+// 		/* Меняем фон чекбокса, когда он включен. */
+// 		&:checked + label:before {
+// 			background: #e70001;
+// 		}
+// 		/* Сдвигаем переключатель чекбокса, когда он включен. */
+// 		&:checked + label:after {
+// 			left: 16px;
+// 		}
+// 		/* Показываем получение фокуса. */
+// 		&:focus + label:before {
+// 			box-shadow: 0 0 0 3px #b1a701;
+// 		}
+// 	}
+// 	&__send {
+// 		background-color: #b1a701;
+// 		color: white;
+// 		outline: none;
+// 		border: none;
+// 		padding: 5px 10px;
+// 		font-weight: 600;
+// 		text-transform: uppercase;
+// 		margin: 10px auto;
+// 		margin-bottom: 0px;
+// 		display: block;
+// 	}
+// }
+
+.aniparent{
+	// perspective: 100px;
+	width: 500px;
+	height: 500px;
 	margin: 0 auto;
-	background-color: #fe583f;
-	box-shadow: 0 0 0px black;
-	outline: none;
-	border: solid 10px #b1a701;
-	border-radius: 20px;
+	background-color: black;
+	border-radius: 100%;
+	// &:hover {
+	// 	.animation-block {
+	// 		transform: translate3d(0px,0px,-30px);
+	// 	}
+	// }
 }
 
-.register {
-	&__label {
-		font-size: 14px;
-		color: #420200;
-		margin-top: 10px;
-	}
-	&__text {
-		// margin-bottom: 10px;
-		// outline: none;
-		padding: 6px;
-		font-weight: 600;
-		border: 1px solid #cccccc;
-		&:focus {
-			outline: 4px solid #b1a701;
-		}
-	}
-	&__sbscr {
-		&:not(checked) {
-			position: absolute;
-			opacity: 0;
-		}
-		&:not(checked) + label {
-		  position: relative; /* будем позиционировать псевдочекбокс относительно label */
-		  padding: 0 0 0 40px; /* оставляем слева от label место под псевдочекбокс */
-		}
-		/* Оформление первой части чекбокса в выключенном состоянии (фон). */
-		&:not(checked) + label:before {
-			content: '';
-			position: absolute;
-			top: 2px;
-			left: 0;
-			width: 30px;
-			height: 16px;
-			// border-radius: 10px;
-			background: #fed3a2;
-			box-shadow: inset 0 2px 3px rgba(0,0,0,.2);
-		}
-		/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
-		&:not(checked) + label:after {
-			content: '';
-			position: absolute;
-			top: 4px;
-			left: 2px;
-			width: 12px;
-			height: 12px;
-			// border-radius: 10px;
-			background: #420200;
-			box-shadow: 0 2px 5px rgba(0,0,0,.3);
-			transition: all .2s; /* анимация, чтобы чекбокс переключался плавно */
-		}
-		/* Меняем фон чекбокса, когда он включен. */
-		&:checked + label:before {
-			background: #e70001;
-		}
-		/* Сдвигаем переключатель чекбокса, когда он включен. */
-		&:checked + label:after {
-			left: 16px;
-		}
-		/* Показываем получение фокуса. */
-		&:focus + label:before {
-			box-shadow: 0 0 0 3px #b1a701;
-		}
-	}
-	&__send {
-		background-color: #b1a701;
-		color: white;
-		outline: none;
-		border: none;
-		padding: 5px 10px;
-		font-weight: 600;
-		text-transform: uppercase;
-		margin: 10px auto;
-		margin-bottom: 0px;
-		display: block;
-	}
+// .animation-block {
+// 	width: 200px;
+// 	height: 200px;
+// 	margin: auto;
+// 	position: absolute;
+// 	left: 0;
+// 	right: 0;
+// 	bottom: 0;
+// 	border-radius: 100%;
+// 	background-color: red;
+// 	// transition: transform 0.2s ease-in-out;
+// 	animation: bounce 1s ease-in-out alternate infinite;
+// }
+
+// @keyframes bounce {
+// 	0% {
+// 		bottom: 0; 
+// 		box-shadow: 0 30px 30px orange; 
+// 		transform: translate3d(-10px,-10px,-10px) rotate3d(0,0,1,0deg);
+// 		}
+// 	50% {
+// 		bottom: 100px; 
+// 		box-shadow: none;
+// 		transform: translate3d(10px,10px,10px) rotate3d(0,0,1,180deg);
+// 		}
+// 	100% {
+// 		bottom: 0;  
+// 		box-shadow: 0 30px 30px yellow;
+// 		transform: translate3d(-10px,-10px,-10px) rotate3d(0,0,1,360deg);
+// 		}
+// }
+
+.logo-google {
+	width: 200px;
 }

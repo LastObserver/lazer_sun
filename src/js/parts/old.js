@@ -27,44 +27,44 @@
 
 
 /*ЗАНЯТИЕ 17.11 ПИЛИЛИ КНОПКУ ПОДНЯТИЯ ВВЕРХ СТРАНИЦЫ С АНИМАЦИЕЙ*/
-// var breakpoint = 200;
-// var activeClass = 'active';
-// var button = $('.up');
+var breakpoint = 200;
+var activeClass = 'active';
+var button = $('.up');
 
-// $('.element').on('click',function(event){
-// 	event.preventDefault();
-// 	console.log(event);
-// })
+$('.element').on('click',function(event){
+	event.preventDefault();
+	console.log(event);
+})
 
-// var element = document.getElementsByClassName('.element');
-// element.onclick = function(event) {
-// 	console.log(event)
-// }
+var element = document.getElementsByClassName('.element');
+element.onclick = function(event) {
+	console.log(event)
+}
 
-// $(window).on('scroll load',function(event) {
-// 	if($(this).scrollTop()>breakpoint) {
-// 		// button.addClass(activeClass);
-// 		button.css('right','20px')
-// 	}
-// 	else {
-// 		// button.removeClass(activeClass);
-// 		button.css('right','-100px')
+$(window).on('scroll load',function(event) {
+	if($(this).scrollTop()>breakpoint) {
+		// button.addClass(activeClass);
+		button.css('right','20px')
+	}
+	else {
+		// button.removeClass(activeClass);
+		button.css('right','-100px')
 
-// 	}
-// 	console.log($(window).scrollTop())
-// });
+	}
+	console.log($(window).scrollTop())
+});
 
-// button.on('click',function(event){
-// 	$('html,body').animate({
-// 		scrollTop: 0
-// 	},500);
-// })
+button.on('click',function(event){
+	$('html,body').animate({
+		scrollTop: 0
+	},500);
+})
 
-// $('.element').hover(
-// 	function(e){
-// 		console.log("Enter");
-// 	},
-// 	function(e){
-// 		console.log("Goodbye")
-// 	}
-// )
+$('.element').hover(
+	function(e){
+		console.log("Enter");
+	},
+	function(e){
+		console.log("Goodbye")
+	}
+)
