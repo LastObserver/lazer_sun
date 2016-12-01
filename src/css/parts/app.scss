@@ -251,3 +251,35 @@ $dark-orange: darken($orange,10);
 .logo-google {
 	width: 200px;
 }
+
+.clockface {
+	height: 680px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+
+.hourarrow {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;	
+	top: 184px;
+}
+
+.minutearrow {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 100px;
+}
+
+.secondarrow {
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top: 100px;
+}

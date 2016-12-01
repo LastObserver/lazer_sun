@@ -7958,7 +7958,10 @@ $('.awesome-slider').slick({
 
 // container.appendTo('body')
 
-
+var i = 1;
+var j = 1;
+var k = 1;
+var clockOn = false;
 $('.navbar-brand__logo').on('click',function(e){
 	// TweenMax.to($('.logo-google'),2,{
 	// 	width: 400,
@@ -7968,15 +7971,99 @@ $('.navbar-brand__logo').on('click',function(e){
 	// })
 	// TweenMax.fromTo($('.logo-google'),2,{scale: 0.5, opacity: 0,x:0},{scale:1,opacity:1,x:400})
 	// TweenMax.from($('.logo-google'),2,{scale: 0.5, opacity: 0.5})
-	var tl = new TimelineMax();
+	// var tl = new TimelineMax();
 	// tl.to($('.logo-google'),1,{opacity:0})
 	// tl.to($('.logo-google'),2,{opacity:1})
 	// tl.to($('.logo-google'),4,{scale: 0.1},'+=2')
 	// tl.to($('.logo-google'),1,{x: 450})
 	// tl.to($('.logo-google'),0.4,{y: 500})
-	tl.staggerTo($('.logo-google'),2,{opacity:0},0.5)
-
+	// tl.staggerTo($('.logo-google'),2,{opacity:0},0.5)
+	var myclock = new TimelineMax();
+	if (clockOn) {
+		clearInterval(mytimer);
+	}
+	if (!clockOn) {
+		var mytimer = setInterval(function(){
+			myclock.to($('.secondarrow'),1,{rotation:6*i,transformOrigin:"50% 95%",
+				onComplete: function(){
+					console.log(i);
+					i++;
+					if (i == 60) {
+						i = 0;
+						TweenMax.to($('.secondarrow'),0,{rotation: i,transformOrigin: "50% 95%"});
+					}
+				}
+			});
+			myclock.to($('.minutearrow'),1,{rotation:0.1*j,transformOrigin:"50% 95%",delay: 0,
+				onComplete: function(){
+					console.log(j);
+					j++;
+					if (j == 3600) {
+						j = 0;
+						TweenMax.to($('.secondarrow'),0,{rotation: i,transformOrigin: "50% 95%"});
+					}
+				}
+			},'-=1');
+			myclock.to($('.hourarrow'),1,{rotation:0.00833*k,transformOrigin:"50% 93%",
+				onComplete: function(){
+					console.log(k);
+					k++;
+					if (k == 43200) {
+						k = 0;
+						TweenMax.to($('.secondarrow'),0,{rotation: k,transformOrigin: "50% 93%"});
+					}
+				}
+			},'-=1');
+		},1000)
+	};
 })
+// var clocking = function(){
+// 	TweenMax.to($('.secondarrow'),1,{rotation:6*i,transformOrigin:"bottom left",
+// 		onComplete: function(){
+// 			console.log(i);
+// 			i++;
+// 			if (i == 60) {
+// 				i = 0;
+// 				TweenMax.to($('.secondarrow'),0,{
+// 					rotation: i, 
+// 					transformOrigin: "bottom left",
+// 					onComplete: function(){
+// 						console.log('hey');
+// 						TweenMax.to($('.minutearrow'),0.2,{
+// 							rotation: 6*j,
+// 							transformOrigin: "bottom left",
+// 							onComplete: function() {
+// 								j++;
+// 								if (j == 60) {
+// 									j = 0;
+// 									TweenMax.to($('.minutearrow'),0,{rotation: j, 
+// 										transformOrigin: "bottom left",
+// 										onComplete: function(){
+// 											TweenMax.to($('.hourarrow'),0.2,{
+// 												rotation: k*30,
+// 												transformOrigin: "bottom left",
+// 												onComplete: function(){
+// 													k++;
+// 													if (k == 12) {
+// 														k = 0;
+// 														TweenMax.to($('.hourarrow'),0,{rotation: k, transformOrigin: "bottom left"})
+// 													}
+// 												}
+// 											});
+// 										}
+// 									})
+
+// 								}
+// 							}
+// 						});
+				
+// 					}
+// 				});
+
+// 			}
+// 		}
+// 	});
+// }
 // // Проверка существования элемента на странице
 // if($('.label').first().length){
 // 	console.log('hello')
