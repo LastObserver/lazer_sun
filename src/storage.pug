@@ -1,0 +1,14 @@
+extends templates/layout
+block wrapper
+	.container
+		.row
+			.col-sm-6
+				form#form-storage(action="#")
+					.form-group
+						input.form-control(name="username" type="text" placeholder="Username")
+					.form-group
+						input.form-control(name="password" type="password" placeholder="Password")
+					.form-group
+						input.form-control(name="email" type="email" placeholder="Email")
+					.form-group
+						textarea.form-control(name="text" placeholder="Whatevs")

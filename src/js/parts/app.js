@@ -171,50 +171,52 @@ $('.navbar-brand__logo').on('click',function(e){
 		},1000)
 	};
 })
-// var clocking = function(){
-// 	TweenMax.to($('.secondarrow'),1,{rotation:6*i,transformOrigin:"bottom left",
-// 		onComplete: function(){
-// 			console.log(i);
-// 			i++;
-// 			if (i == 60) {
-// 				i = 0;
-// 				TweenMax.to($('.secondarrow'),0,{
-// 					rotation: i, 
-// 					transformOrigin: "bottom left",
-// 					onComplete: function(){
-// 						console.log('hey');
-// 						TweenMax.to($('.minutearrow'),0.2,{
-// 							rotation: 6*j,
-// 							transformOrigin: "bottom left",
-// 							onComplete: function() {
-// 								j++;
-// 								if (j == 60) {
-// 									j = 0;
-// 									TweenMax.to($('.minutearrow'),0,{rotation: j, 
-// 										transformOrigin: "bottom left",
-// 										onComplete: function(){
-// 											TweenMax.to($('.hourarrow'),0.2,{
-// 												rotation: k*30,
-// 												transformOrigin: "bottom left",
-// 												onComplete: function(){
-// 													k++;
-// 													if (k == 12) {
-// 														k = 0;
-// 														TweenMax.to($('.hourarrow'),0,{rotation: k, transformOrigin: "bottom left"})
-// 													}
-// 												}
-// 											});
-// 										}
-// 									})
 
-// 								}
-// 							}
-// 						});
-				
-// 					}
-// 				});
+if (window.addEventListener) {
+  window.addEventListener("storage", handle_storage, false);
+} else {
+  window.attachEvent("onstorage", handle_storage);
+};
 
-// 			}
-// 		}
-// 	});
-// }
+function handle_storage(e) {
+  if (!e) { e = window.event; }
+  console.log(e);
+}
+
+$('#form-storage [name]').on('change input',function(e){
+	var formData = JSON.stringify($('#form-storage').serializeArray());
+	localStorage.setItem("formData",formData);
+})
+
+
+$(window).on('load',function(){
+	var formData = localStorage.getItem("formData");
+	if (!formData)
+		return;
+	formData = JSON.parse(formData);
+	$.each(formData,function(index,element){
+		var key = element.name;
+		var value = element.value;
+		$('#form-storage').find('[name='+key+']').val(value);
+	})
+	
+})
+
+
+
+$.fn.serializeObject = function(){ 
+	var o = {}; 
+	var a = this.serializeArray(); 
+	$.each(a, function() { 
+		if (o[this.name]) { 
+			if (!o[this.name].push) { 
+				o[this.name] = [o[this.name]]; 
+			} 
+			o[this.name].push(this.value || ''); 
+		} 
+		else { 
+			o[this.name] = this.value || ''; 
+		} 
+	}); 
+	return o; 
+};
