@@ -164,7 +164,7 @@ $('.navbar-brand__logo').on('click',function(e){
 					j++;
 					if (j == 3600) {
 						j = 0;
-						TweenMax.to($('.secondarrow'),0,{rotation: i,transformOrigin: "50% 95%"});
+						myclock.to($('.secondarrow'),0,{rotation: i,transformOrigin: "50% 95%"});
 					}
 				}
 			},'-=0.99');
@@ -174,7 +174,7 @@ $('.navbar-brand__logo').on('click',function(e){
 					k++;
 					if (k == 43200) {
 						k = 0;
-						TweenMax.to($('.secondarrow'),0,{rotation: k,transformOrigin: "50% 93%"});
+						myclock.to($('.secondarrow'),0,{rotation: k,transformOrigin: "50% 93%"});
 					}
 				}
 			},'-=0.99');
@@ -231,11 +231,56 @@ $.fn.serializeObject = function(){
 	return o; 
 };
 
-var counter = 0;
-function count(){
-counter++;
-console.log(counter);
-TweenMax.delayedCall(1, count);
+
+function getCookie(name) {
+	var matches = document.cookie.match(new RegExp(
+		"(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+	));
+	return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-count()
+function setCookie(name, value, options) {
+	options = options || {};
+
+	var expires = options.expires;
+
+	if (typeof expires == "number" && expires) {
+		var d = new Date();
+		d.setTime(d.getTime() + expires * 1000);
+		expires = options.expires = d;
+	}
+	if (expires && expires.toUTCString) {
+		options.expires = expires.toUTCString();
+	}
+
+	value = encodeURIComponent(value);
+
+	var updatedCookie = name + "=" + value;
+
+	for (var propName in options) {
+		updatedCookie += "; " + propName;
+		var propValue = options[propName];
+		if (propValue !== true) {
+			updatedCookie += "=" + propValue;
+		}
+	}
+
+	document.cookie = updatedCookie;
+}
+
+var timer = new Date(new Date().getTime() + (365 * 24 * 3600 * 1000));
+timer = timer.toUTCString();
+var directory = "/";
+var domainName = location.hostname;
+var security = false;
+var settings = {expires:timer, path:directory, domain: domainName};
+var test = false;
+
+$('button').on('click',function(){
+	test = !test;
+	setCookie('hello',test,settings);
+})
+
+$('.navbar-brand').on('click',function(){
+	console.log(getCookie('hello'));
+})
